@@ -10,10 +10,10 @@ public class fmr_graphic_state extends javax.swing.JFrame {
 
     LinkedList<cls_workers> obj_workers = new LinkedList<>();
     boolean bln_sw;
-    int int_posicion = 0;
+    int int_position = 0;
     LinkedList<cls_allotment> obj_allotment = new LinkedList<>();
     boolean bln_sw2;
-    int int_posicion2 = 0;
+    int int_position2 = 0;
     
     
     public fmr_graphic_state() {
@@ -495,15 +495,44 @@ public class fmr_graphic_state extends javax.swing.JFrame {
         }
     
     private void btn_updatewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updatewActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btn_updatewActionPerformed
 
     private void btn_consultwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultwActionPerformed
-        // TODO add your handling code here:
+        bln_sw = false;
+        int_position = 0;
+        
+        if(txt_codew.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Enter the worker code!", "Consult", JOptionPane.ERROR_MESSAGE);
+        }else{
+            for(int i = 0; i < obj_workers.size(); i++){
+                if(txt_codew.getText().equals(obj_workers.get(i).getStr_code())){
+                    bln_sw = true;
+                    int_position = i;
+                }
+            }
+            if(bln_sw == false){
+                JOptionPane.showMessageDialog(null, "Not records found", "Consult", JOptionPane.ERROR_MESSAGE);
+            }else{
+                txt_chargew.setText(obj_workers.get(int_position).getStr_charge());
+                txt_contactw.setText(obj_workers.get(int_position).getStr_contact());
+                txt_addressw.setText(obj_workers.get(int_position).getStr_address());
+                txt_namew.setText(obj_workers.get(int_position).getStr_name());
+                txt_sexw.setText(obj_workers.get(int_position).getStr_sex());
+            }
+        }
     }//GEN-LAST:event_btn_consultwActionPerformed
 
     private void btn_registereActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registereActionPerformed
-        // TODO add your handling code here:
+        if(txt_codee.getText().equals("") || txt_names.getText().equals("") || txt_extensione.getText().equals("") || txt_addresse.getText().equals("") 
+            || txt_crop.getText().equals("") || txt_codewe.getText().equals("")){
+        JOptionPane.showMessageDialog(null, "Please enter all the information", "Register", JOptionPane.ERROR_MESSAGE);
+    }else{
+        obj_allotment.add(new cls_allotment(txt_codee.getText(), txt_names.getText(), txt_extensione.getText(), txt_addresse.getText(), 
+                txt_contactw.getText(), txt_crop.getText(), txt_codewe.getText()));
+    JOptionPane.showMessageDialog(null, "Succssful registration", "Register", JOptionPane.INFORMATION_MESSAGE);
+    fnt_clear();
+        }
     }//GEN-LAST:event_btn_registereActionPerformed
 
     private void btn_updateeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateeActionPerformed
@@ -511,13 +540,34 @@ public class fmr_graphic_state extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_updateeActionPerformed
 
     private void btn_consulteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consulteActionPerformed
-        // TODO add your handling code here:
+        bln_sw2 = false;
+        int_position2 = 0;
+        
+        if(txt_codee.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Enter the allotment code!", "Consult", JOptionPane.ERROR_MESSAGE);
+        }else{
+            for(int i = 0; i < obj_allotment.size(); i++){
+                if(txt_codew.getText().equals(obj_allotment.get(i).getStr_code())){
+                    bln_sw2 = true;
+                    int_position2 = i;
+                }
+            }
+            if(bln_sw2 == false){
+                JOptionPane.showMessageDialog(null, "Not records found", "Consult", JOptionPane.ERROR_MESSAGE);
+            }else{
+                txt_names.setText(obj_allotment.get(int_position2).getStr_name());
+                txt_extensione.setText(obj_allotment.get(int_position2).getStr_extension());
+                txt_addresse.setText(obj_allotment.get(int_position2).getStr_address());
+                txt_crope.setText(obj_allotment.get(int_position2).getStr_crop());
+                txt_codewe.setText(obj_allotment.get(int_position2).getStr_worker_code());
+            }
+        }
     }//GEN-LAST:event_btn_consulteActionPerformed
 
     public static void main(String args[]) {
 
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+        java.awt.EventQueue.invokeLater(new Runnable(){
+            public void run(){
                 new fmr_graphic_state().setVisible(true);
             }
         });

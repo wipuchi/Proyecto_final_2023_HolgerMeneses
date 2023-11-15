@@ -2,11 +2,12 @@ package Controller;
 
 public class cls_workers {
 
-    private String str_name, str_code, str_sex, str_contact, str_address, str_mail;
+    private String str_name, str_code,str_charge, str_sex, str_contact, str_address, str_mail;
 
-    public cls_workers(String str_name, String str_code, String str_sex, String str_contact, String str_address, String str_mail) {
+    public cls_workers(String str_name, String str_code, String str_charge, String str_sex, String str_contact, String str_address, String str_mail) {
         this.str_name = str_name;
         this.str_code = str_code;
+        this.str_charge = str_charge;
         this.str_sex = str_sex;
         this.str_contact = str_contact;
         this.str_address = str_address;
@@ -18,6 +19,10 @@ public class cls_workers {
     public void setStr_name(String str_name) {this.str_name = str_name;}
 
     public String getStr_code() {return str_code;}
+
+    public String getStr_charge() {return str_charge;}
+
+    public void setStr_charge(String str_charge) {this.str_charge = str_charge;}
 
     public String getStr_sex() {return str_sex;}
 
