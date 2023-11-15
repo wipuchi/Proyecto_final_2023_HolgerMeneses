@@ -3,14 +3,18 @@ package Views;
 import Controller.cls_allotment;
 import Controller.cls_workers;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 
 public class fmr_graphic_state extends javax.swing.JFrame {
 
     LinkedList<cls_workers> obj_workers = new LinkedList<>();
-    LinkedList<cls_allotment> obj_allotment = new LinkedList<>();
     boolean bln_sw;
-    int int_posicion;
+    int int_posicion = 0;
+    LinkedList<cls_allotment> obj_allotment = new LinkedList<>();
+    boolean bln_sw2;
+    int int_posicion2 = 0;
+    
     
     public fmr_graphic_state() {
         initComponents();
@@ -28,41 +32,41 @@ public class fmr_graphic_state extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txt_wname = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txt_namew = new javax.swing.JTextField();
         txt_wcode = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txt_codew = new javax.swing.JTextField();
         txt_charge = new javax.swing.JLabel();
         txt_sex = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
+        txt_contactw = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txt_addressw = new javax.swing.JTextField();
         txt_waddress = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txt_mailw = new javax.swing.JTextField();
         txt_mail = new javax.swing.JLabel();
         txt_contact = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btn_registerw = new javax.swing.JButton();
+        btn_updatew = new javax.swing.JButton();
+        btn_consultw = new javax.swing.JButton();
+        txt_chargew = new javax.swing.JTextField();
+        txt_sexw = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         txt_ename = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txt_names = new javax.swing.JTextField();
         txt_ecode = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txt_codee = new javax.swing.JTextField();
         txt_extension = new javax.swing.JLabel();
         txt_eaddress = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txt_addresse = new javax.swing.JTextField();
         txt_crop = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        txt_crope = new javax.swing.JTextField();
         txt_workercode = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        txt_codewe = new javax.swing.JTextField();
+        txt_extensione = new javax.swing.JTextField();
+        btn_updatee = new javax.swing.JButton();
+        btn_consulte = new javax.swing.JButton();
+        btn_registere = new javax.swing.JButton();
 
         jLabel3.setText("jLabel3");
 
@@ -120,12 +124,12 @@ public class fmr_graphic_state extends javax.swing.JFrame {
         txt_wname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_wname.setText("Name:");
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt_namew.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         txt_wcode.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_wcode.setText("Code:");
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt_codew.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         txt_charge.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_charge.setText("Charge");
@@ -133,27 +137,16 @@ public class fmr_graphic_state extends javax.swing.JFrame {
         txt_sex.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_sex.setText("Sex:");
 
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
-        jComboBox2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrator", "Laborer", "Secretary" }));
-
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt_contactw.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt_addressw.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         txt_waddress.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_waddress.setText("Address:");
 
-        jTextField5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt_mailw.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         txt_mail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_mail.setText("Mail:");
@@ -161,32 +154,36 @@ public class fmr_graphic_state extends javax.swing.JFrame {
         txt_contact.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_contact.setText("Contact:");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/document.png"))); // NOI18N
-        jButton1.setText("Register");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_registerw.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_registerw.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/document.png"))); // NOI18N
+        btn_registerw.setText("Register");
+        btn_registerw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_registerwActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/update.png"))); // NOI18N
-        jButton2.setText("Update");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_updatew.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_updatew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/update.png"))); // NOI18N
+        btn_updatew.setText("Update");
+        btn_updatew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_updatewActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search.png"))); // NOI18N
-        jButton3.setText("Consult");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_consultw.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_consultw.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search.png"))); // NOI18N
+        btn_consultw.setText("Consult");
+        btn_consultw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_consultwActionPerformed(evt);
             }
         });
+
+        txt_chargew.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        txt_sexw.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -203,7 +200,7 @@ public class fmr_graphic_state extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(txt_wname)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txt_namew, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(txt_charge)
@@ -212,10 +209,10 @@ public class fmr_graphic_state extends javax.swing.JFrame {
                                         .addComponent(txt_contact))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(txt_codew, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txt_contactw, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txt_chargew, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txt_sexw, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                     .addGap(10, 10, 10)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -223,15 +220,15 @@ public class fmr_graphic_state extends javax.swing.JFrame {
                                         .addComponent(txt_mail))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(txt_mailw, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txt_addressw, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(87, 87, 87)
-                        .addComponent(jButton1)
+                        .addComponent(btn_registerw)
                         .addGap(30, 30, 30)
-                        .addComponent(jButton2)
+                        .addComponent(btn_updatew)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton3)))
+                        .addComponent(btn_consultw)))
                 .addContainerGap(110, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -241,37 +238,38 @@ public class fmr_graphic_state extends javax.swing.JFrame {
                 .addGap(60, 60, 60)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_wname)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_namew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_wcode)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_codew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_charge)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_chargew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_sex))
+                    .addComponent(txt_sex)
+                    .addComponent(txt_sexw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_contact))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_contactw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel9)
+                        .addComponent(txt_contact)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_waddress)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_addressw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_mail)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_mailw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(btn_registerw)
+                    .addComponent(btn_updatew)
+                    .addComponent(btn_consultw))
                 .addGap(85, 85, 85))
         );
 
@@ -291,7 +289,7 @@ public class fmr_graphic_state extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(176, 176, 176)
                 .addComponent(jLabel4)
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addContainerGap(235, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,12 +302,12 @@ public class fmr_graphic_state extends javax.swing.JFrame {
         txt_ename.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_ename.setText("Name:");
 
-        jTextField6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt_names.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         txt_ecode.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_ecode.setText("Code:");
 
-        jTextField7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt_codee.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         txt_extension.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_extension.setText("Extension:");
@@ -317,44 +315,44 @@ public class fmr_graphic_state extends javax.swing.JFrame {
         txt_eaddress.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_eaddress.setText("Address:");
 
-        jTextField8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt_addresse.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         txt_crop.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_crop.setText("Crop:");
 
-        jTextField9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt_crope.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         txt_workercode.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_workercode.setText("Worker code:");
 
-        jTextField10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt_codewe.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jTextField11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt_extensione.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jButton8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/update.png"))); // NOI18N
-        jButton8.setText("Update");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btn_updatee.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_updatee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/update.png"))); // NOI18N
+        btn_updatee.setText("Update");
+        btn_updatee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btn_updateeActionPerformed(evt);
             }
         });
 
-        jButton9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search.png"))); // NOI18N
-        jButton9.setText("Consult");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        btn_consulte.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_consulte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search.png"))); // NOI18N
+        btn_consulte.setText("Consult");
+        btn_consulte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                btn_consulteActionPerformed(evt);
             }
         });
 
-        jButton7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/document.png"))); // NOI18N
-        jButton7.setText("Register");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btn_registere.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_registere.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/document.png"))); // NOI18N
+        btn_registere.setText("Register");
+        btn_registere.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btn_registereActionPerformed(evt);
             }
         });
 
@@ -362,10 +360,6 @@ public class fmr_graphic_state extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(91, 91, 91)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -375,35 +369,38 @@ public class fmr_graphic_state extends javax.swing.JFrame {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(txt_ename)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txt_names, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txt_extension)
                                     .addComponent(txt_ecode))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txt_codee, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_extensione, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel4Layout.createSequentialGroup()
                                     .addComponent(txt_eaddress)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txt_addresse, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(txt_crop)
                                         .addComponent(txt_workercode))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(txt_codewe, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txt_crope, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jButton7)
+                        .addComponent(btn_registere)
                         .addGap(30, 30, 30)
-                        .addComponent(jButton8)
+                        .addComponent(btn_updatee)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton9)))
+                        .addComponent(btn_consulte)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -412,32 +409,32 @@ public class fmr_graphic_state extends javax.swing.JFrame {
                 .addGap(74, 74, 74)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_ename)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_names, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_ecode)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_codee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_extension)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_extensione, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_addresse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_eaddress))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_crop)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_crope, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_workercode)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_codewe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8)
-                    .addComponent(jButton9))
+                    .addComponent(btn_registere)
+                    .addComponent(btn_updatee)
+                    .addComponent(btn_consulte))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -468,33 +465,54 @@ public class fmr_graphic_state extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    private void btn_registerwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerwActionPerformed
+        if(txt_codew.getText().equals("") || txt_namew.getText().equals("") || txt_chargew.getText().equals("") || txt_sexw.getText().equals("") 
+            || txt_contactw.getText().equals("") || txt_addressw.getText().equals("") || txt_mailw.getText().equals("")){
+        JOptionPane.showMessageDialog(null, "Please enter all the information", "Register", JOptionPane.ERROR_MESSAGE);
+    }else{
+        obj_allotment.add(new cls_allotment(txt_codew.getText(), txt_namew.getText(), txt_chargew.getText(), txt_sexw.getText(), txt_contactw.getText(),
+                txt_addressw.getText(), txt_mailw.getText()));
+    JOptionPane.showMessageDialog(null, "Succssful registration", "Register", JOptionPane.INFORMATION_MESSAGE);
+    fnt_clear();
+        }
+    }//GEN-LAST:event_btn_registerwActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void fnt_clear(){
+        txt_codew.setText("");
+        txt_codee.setText("");
+        txt_chargew.setText("");
+        txt_contactw.setText("");
+        txt_crop.setText("");
+        txt_addressw.setText("");
+        txt_addresse.setText("");
+        txt_mailw.setText("");
+        txt_extension.setText("");
+        txt_namew.setText("");
+        txt_names.setText("");
+        txt_sexw.setText("");
+        txt_codewe.setText("");
+        txt_codew.requestFocus();
+        }
+    
+    private void btn_updatewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updatewActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_updatewActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_consultwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultwActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_consultwActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btn_registereActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registereActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btn_registereActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btn_updateeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btn_updateeActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btn_consulteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consulteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_btn_consulteActionPerformed
 
     public static void main(String args[]) {
 
@@ -506,14 +524,12 @@ public class fmr_graphic_state extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton btn_consulte;
+    private javax.swing.JButton btn_consultw;
+    private javax.swing.JButton btn_registere;
+    private javax.swing.JButton btn_registerw;
+    private javax.swing.JButton btn_updatee;
+    private javax.swing.JButton btn_updatew;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -524,26 +540,28 @@ public class fmr_graphic_state extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField txt_addresse;
+    private javax.swing.JTextField txt_addressw;
     private javax.swing.JLabel txt_charge;
+    private javax.swing.JTextField txt_chargew;
+    private javax.swing.JTextField txt_codee;
+    private javax.swing.JTextField txt_codew;
+    private javax.swing.JTextField txt_codewe;
     private javax.swing.JLabel txt_contact;
+    private javax.swing.JTextField txt_contactw;
     private javax.swing.JLabel txt_crop;
+    private javax.swing.JTextField txt_crope;
     private javax.swing.JLabel txt_eaddress;
     private javax.swing.JLabel txt_ecode;
     private javax.swing.JLabel txt_ename;
     private javax.swing.JLabel txt_extension;
+    private javax.swing.JTextField txt_extensione;
     private javax.swing.JLabel txt_mail;
+    private javax.swing.JTextField txt_mailw;
+    private javax.swing.JTextField txt_names;
+    private javax.swing.JTextField txt_namew;
     private javax.swing.JLabel txt_sex;
+    private javax.swing.JTextField txt_sexw;
     private javax.swing.JLabel txt_waddress;
     private javax.swing.JLabel txt_wcode;
     private javax.swing.JLabel txt_wname;
