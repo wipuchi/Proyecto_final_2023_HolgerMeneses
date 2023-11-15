@@ -56,10 +56,10 @@ public class fmr_graphic_state extends javax.swing.JFrame {
         txt_names = new javax.swing.JTextField();
         txt_ecode = new javax.swing.JLabel();
         txt_codee = new javax.swing.JTextField();
-        txt_extension = new javax.swing.JLabel();
+        label223 = new javax.swing.JLabel();
         txt_eaddress = new javax.swing.JLabel();
         txt_addresse = new javax.swing.JTextField();
-        txt_crop = new javax.swing.JLabel();
+        label = new javax.swing.JLabel();
         txt_crope = new javax.swing.JTextField();
         txt_workercode = new javax.swing.JLabel();
         txt_codewe = new javax.swing.JTextField();
@@ -309,16 +309,16 @@ public class fmr_graphic_state extends javax.swing.JFrame {
 
         txt_codee.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        txt_extension.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txt_extension.setText("Extension:");
+        label223.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        label223.setText("Extension:");
 
         txt_eaddress.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_eaddress.setText("Address:");
 
         txt_addresse.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        txt_crop.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txt_crop.setText("Crop:");
+        label.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        label.setText("Crop:");
 
         txt_crope.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
@@ -372,7 +372,7 @@ public class fmr_graphic_state extends javax.swing.JFrame {
                                 .addComponent(txt_names, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txt_extension)
+                                    .addComponent(label223)
                                     .addComponent(txt_ecode))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -385,7 +385,7 @@ public class fmr_graphic_state extends javax.swing.JFrame {
                                     .addComponent(txt_addresse, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(txt_crop)
+                                        .addComponent(label)
                                         .addComponent(txt_workercode))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -416,7 +416,7 @@ public class fmr_graphic_state extends javax.swing.JFrame {
                     .addComponent(txt_codee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_extension)
+                    .addComponent(label223)
                     .addComponent(txt_extensione, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -424,7 +424,7 @@ public class fmr_graphic_state extends javax.swing.JFrame {
                     .addComponent(txt_eaddress))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_crop)
+                    .addComponent(label)
                     .addComponent(txt_crope, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -470,7 +470,7 @@ public class fmr_graphic_state extends javax.swing.JFrame {
             || txt_contactw.getText().equals("") || txt_addressw.getText().equals("") || txt_mailw.getText().equals("")){
         JOptionPane.showMessageDialog(null, "Please enter all the information", "Register", JOptionPane.ERROR_MESSAGE);
     }else{
-        obj_allotment.add(new cls_allotment(txt_codew.getText(), txt_namew.getText(), txt_chargew.getText(), txt_sexw.getText(), txt_contactw.getText(),
+        obj_workers.add(new cls_workers(txt_namew.getText(), txt_codew.getText(), txt_chargew.getText(), txt_sexw.getText(), txt_contactw.getText(),
                 txt_addressw.getText(), txt_mailw.getText()));
     JOptionPane.showMessageDialog(null, "Succssful registration", "Register", JOptionPane.INFORMATION_MESSAGE);
     fnt_clear();
@@ -482,11 +482,11 @@ public class fmr_graphic_state extends javax.swing.JFrame {
         txt_codee.setText("");
         txt_chargew.setText("");
         txt_contactw.setText("");
-        txt_crop.setText("");
+        txt_extensione.setText("");
         txt_addressw.setText("");
         txt_addresse.setText("");
         txt_mailw.setText("");
-        txt_extension.setText("");
+        txt_crope.setText("");
         txt_namew.setText("");
         txt_names.setText("");
         txt_sexw.setText("");
@@ -495,7 +495,32 @@ public class fmr_graphic_state extends javax.swing.JFrame {
         }
     
     private void btn_updatewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updatewActionPerformed
+        bln_sw = false;
+        int_position = 0;
         
+        if(txt_codew.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Enter the worker code!", "Consult", JOptionPane.ERROR_MESSAGE);
+        }else{
+            for(int i = 0; i < obj_workers.size(); i++){
+                if(txt_codew.getText().equals(obj_workers.get(i).getStr_code())){
+                    bln_sw = true;
+                    int_position = i;
+                    break;
+                }
+            }
+            if(bln_sw == false){
+                JOptionPane.showMessageDialog(null, "Not records found", "Update", JOptionPane.ERROR_MESSAGE);
+            }else{
+                obj_workers.get(int_position).setStr_charge(txt_chargew.getText());
+                obj_workers.get(int_position).setStr_contact(txt_contactw.getText());
+                obj_workers.get(int_position).setStr_address(txt_addressw.getText());
+                obj_workers.get(int_position).setStr_name(txt_namew.getText());
+                obj_workers.get(int_position).setStr_sex(txt_sexw.getText());
+                obj_workers.get(int_position).setStr_mail(txt_mailw.getText());
+                fnt_clear();
+                JOptionPane.showMessageDialog(null, "Succesful Update", "Update", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btn_updatewActionPerformed
 
     private void btn_consultwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultwActionPerformed
@@ -509,6 +534,7 @@ public class fmr_graphic_state extends javax.swing.JFrame {
                 if(txt_codew.getText().equals(obj_workers.get(i).getStr_code())){
                     bln_sw = true;
                     int_position = i;
+                    break;
                 }
             }
             if(bln_sw == false){
@@ -519,24 +545,49 @@ public class fmr_graphic_state extends javax.swing.JFrame {
                 txt_addressw.setText(obj_workers.get(int_position).getStr_address());
                 txt_namew.setText(obj_workers.get(int_position).getStr_name());
                 txt_sexw.setText(obj_workers.get(int_position).getStr_sex());
+                txt_mailw.setText(obj_workers.get(int_position).getStr_mail());
             }
         }
     }//GEN-LAST:event_btn_consultwActionPerformed
 
     private void btn_registereActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registereActionPerformed
         if(txt_codee.getText().equals("") || txt_names.getText().equals("") || txt_extensione.getText().equals("") || txt_addresse.getText().equals("") 
-            || txt_crop.getText().equals("") || txt_codewe.getText().equals("")){
+            || label.getText().equals("") || txt_codewe.getText().equals("")){
         JOptionPane.showMessageDialog(null, "Please enter all the information", "Register", JOptionPane.ERROR_MESSAGE);
     }else{
-        obj_allotment.add(new cls_allotment(txt_codee.getText(), txt_names.getText(), txt_extensione.getText(), txt_addresse.getText(), 
-                txt_contactw.getText(), txt_crop.getText(), txt_codewe.getText()));
+        obj_allotment.add(new cls_allotment(txt_names.getText(), txt_codee.getText(), txt_extensione.getText(), txt_addresse.getText(),
+                txt_crope.getText(), txt_codewe.getText()));
     JOptionPane.showMessageDialog(null, "Succssful registration", "Register", JOptionPane.INFORMATION_MESSAGE);
     fnt_clear();
         }
     }//GEN-LAST:event_btn_registereActionPerformed
 
     private void btn_updateeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateeActionPerformed
-        // TODO add your handling code here:
+        bln_sw2 = false;
+        int_position2 = 0;
+        
+        if(txt_codee.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Enter the allotment code!", "Consult", JOptionPane.ERROR_MESSAGE);
+        }else{
+            for(int i = 0; i < obj_allotment.size(); i++){
+                if(txt_codee.getText().equals(obj_allotment.get(i).getStr_code())){
+                    bln_sw2 = true;
+                    int_position2 = i;
+                    break;
+                }
+            }
+            if(bln_sw2 == false){
+                JOptionPane.showMessageDialog(null, "Not records found", "Consult", JOptionPane.ERROR_MESSAGE);
+            }else{
+                obj_allotment.get(int_position2).setStr_name(txt_names.getText());
+                obj_allotment.get(int_position2).setStr_extension(txt_extensione.getText());
+                obj_allotment.get(int_position2).setStr_address(txt_addresse.getText());
+                obj_allotment.get(int_position2).setStr_crop(txt_crope.getText());
+                obj_allotment.get(int_position2).setStr_worker_code(txt_codewe.getText());
+                fnt_clear();
+                JOptionPane.showMessageDialog(null, "Succesful Update", "Update", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btn_updateeActionPerformed
 
     private void btn_consulteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consulteActionPerformed
@@ -547,9 +598,10 @@ public class fmr_graphic_state extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Enter the allotment code!", "Consult", JOptionPane.ERROR_MESSAGE);
         }else{
             for(int i = 0; i < obj_allotment.size(); i++){
-                if(txt_codew.getText().equals(obj_allotment.get(i).getStr_code())){
+                if(txt_codee.getText().equals(obj_allotment.get(i).getStr_code())){
                     bln_sw2 = true;
                     int_position2 = i;
+                    break;
                 }
             }
             if(bln_sw2 == false){
@@ -590,6 +642,8 @@ public class fmr_graphic_state extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JLabel label;
+    private javax.swing.JLabel label223;
     private javax.swing.JTextField txt_addresse;
     private javax.swing.JTextField txt_addressw;
     private javax.swing.JLabel txt_charge;
@@ -599,12 +653,10 @@ public class fmr_graphic_state extends javax.swing.JFrame {
     private javax.swing.JTextField txt_codewe;
     private javax.swing.JLabel txt_contact;
     private javax.swing.JTextField txt_contactw;
-    private javax.swing.JLabel txt_crop;
     private javax.swing.JTextField txt_crope;
     private javax.swing.JLabel txt_eaddress;
     private javax.swing.JLabel txt_ecode;
     private javax.swing.JLabel txt_ename;
-    private javax.swing.JLabel txt_extension;
     private javax.swing.JTextField txt_extensione;
     private javax.swing.JLabel txt_mail;
     private javax.swing.JTextField txt_mailw;

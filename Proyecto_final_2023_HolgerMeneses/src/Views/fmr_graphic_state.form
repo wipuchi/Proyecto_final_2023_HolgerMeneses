@@ -453,7 +453,7 @@
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="txt_extension" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label223" alignment="1" min="-2" max="-2" attributes="0"/>
                                       <Component id="txt_ecode" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -470,7 +470,7 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="txt_crop" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="label" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="txt_workercode" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -514,7 +514,7 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txt_extension" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label223" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txt_extensione" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -524,7 +524,7 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txt_crop" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txt_crope" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -617,7 +617,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="txt_extension">
+        <Component class="javax.swing.JLabel" name="label223">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -640,7 +640,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="txt_crop">
+        <Component class="javax.swing.JLabel" name="label">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>

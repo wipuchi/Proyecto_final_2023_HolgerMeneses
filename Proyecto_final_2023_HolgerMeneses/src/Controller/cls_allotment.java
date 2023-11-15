@@ -6,7 +6,7 @@ public class cls_allotment {
     private String str_name, str_code, str_extension, str_address, str_crop, str_worker_code;
     
     
-     public cls_allotment(String str_name, String str_code, String str_extension, String str_address, String str_crop, String str_worker_code, String text6) {
+     public cls_allotment(String str_name, String str_code, String str_extension, String str_address, String str_crop, String str_worker_code) {
         this.str_name = str_name;
         this.str_code = str_code;
         this.str_extension = str_extension;
@@ -14,6 +14,8 @@ public class cls_allotment {
         this.str_crop = str_crop;
         this.str_worker_code = str_worker_code;
     }
+
+ 
 
     public String getStr_name() {return str_name;}
 
